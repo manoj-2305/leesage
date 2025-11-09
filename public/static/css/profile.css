@@ -1,0 +1,341 @@
+/* Profile Section Styles - Only for middle content */
+.profile-container {
+  background: linear-gradient(135deg, #f5f1e9 0%, #ffffff 100%);
+  padding: 3rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 2rem auto;
+  text-align: center;
+  border: 1px solid #d9cbb6;
+}
+
+.profile-container h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: #000;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+/* Profile Cards */
+.profile-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f5f1e9;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.profile-card h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: #000;
+  margin-bottom: 1.5rem;
+  text-align: left;
+  border-bottom: 2px solid #bfa06a;
+  padding-bottom: 0.5rem;
+}
+
+/* Profile Info */
+.profile-info {
+  display: grid;
+  gap: 1rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.profile-info h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.user-email {
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.profile-details {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background-color: #f9f6f0;
+  border-radius: 8px;
+}
+
+.profile-details p {
+  margin: 0.5rem 0;
+  color: #333;
+}
+
+.profile-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.profile-actions .btn {
+  background-color: #bfa06a;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.profile-actions .btn:hover {
+  background-color: #a6853f;
+}
+
+.profile-info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f5f1e9;
+}
+
+.profile-info-item:last-child {
+  border-bottom: none;
+}
+
+.profile-info-label {
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 1rem;
+}
+
+.profile-info-value {
+  color: #000;
+  font-size: 1rem;
+}
+
+/* Profile Avatar */
+.profile-avatar-large {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #bfa06a, #a6853f);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0 auto 2rem;
+  border: 4px solid white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Loading and Error States */
+.loading, .error {
+  padding: 2rem;
+  text-align: center;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+.loading {
+  background-color: #f9f6f0;
+  color: #666;
+  font-style: italic;
+}
+
+.error {
+  background-color: #fff0f0;
+  color: #d32f2f;
+  border: 1px solid #ffcdd2;
+}
+
+/* Profile Image */
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Form Styles */
+.profile-form {
+  display: grid;
+  gap: 1.5rem;
+  margin: 1rem 0;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.form-group input {
+  padding: 0.75rem;
+  border: 1px solid #d9cbb6;
+  border-radius: 6px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fafafa;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #bfa06a;
+  box-shadow: 0 0 0 2px rgba(191, 160, 106, 0.2);
+  background-color: white;
+}
+
+/* Buttons */
+.btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #bfa06a, #a6853f);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #a6853f, #8a6d33);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(191, 160, 106, 0.3);
+}
+
+.btn-secondary {
+  background: #f5f1e9;
+  color: #2c3e50;
+  border: 1px solid #d9cbb6;
+}
+
+.btn-secondary:hover {
+  background: #d9cbb6;
+  color: #000;
+}
+
+/* Logout Button */
+.logout-button {
+  background: linear-gradient(135deg, #dc3545, #c82333);
+  color: white;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 2rem;
+}
+
+.logout-button:hover {
+  background: linear-gradient(135deg, #c82333, #bd2130);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
+}
+
+/* Order History */
+#order-history {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .profile-container {
+    padding: 2rem;
+    margin: 1rem;
+  }
+  
+  .profile-container h1 {
+    font-size: 2rem;
+  }
+  
+  .profile-card {
+    padding: 1.5rem;
+  }
+  
+  .profile-card h2 {
+    font-size: 1.5rem;
+  }
+  
+  .profile-info-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-container {
+    padding: 1.5rem;
+    margin: 0.5rem;
+  }
+  
+  .profile-container h1 {
+    font-size: 1.8rem;
+  }
+  
+  .profile-card {
+    padding: 1rem;
+  }
+  
+  .profile-avatar-large {
+    width: 100px;
+    height: 100px;
+    font-size: 2.5rem;
+  }
+}
+
+/* Loading States */
+.loading {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #f5f1e9;
+  border-top: 3px solid #bfa06a;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+.hidden { display: none; }

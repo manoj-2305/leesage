@@ -1,0 +1,74 @@
+<!-- Users Management Content -->
+<div class="users-content">
+    <div class="users-header">
+        <h3>All Users</h3>
+        <div class="user-actions">
+            <button class="btn btn-primary" id="addUserBtn">
+                <i class="fas fa-plus"></i> Add User
+            </button>
+        </div>
+    </div>
+
+    <div class="users-table-container">
+        <table class="users-table">
+            <thead>
+                <tr>
+                    <th>User ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- User rows will be loaded dynamically -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Add/Edit User Modal -->
+    <div class="modal" id="userModal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="userModalTitle">Add New User</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="userForm">
+                    <input type="hidden" id="userId">
+                    <div class="form-group">
+                        <label for="userName">Name</label>
+                        <input type="text" id="userName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="userEmail">Email</label>
+                        <input type="email" id="userEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="userRole">Role</label>
+                        <select id="userRole">
+                            <option value="customer">Customer</option>
+                            <option value="admin">Admin</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="userStatus">Status</label>
+                        <select id="userStatus">
+                            <option value="active">Active</option>
+                            <option value="inactive">Inactive</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="userPassword">Password (leave blank to keep current)</label>
+                        <input type="password" id="userPassword">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="cancelUser">Cancel</button>
+                <button type="submit" class="btn btn-primary" form="userForm">Save User</button>
+            </div>
+        </div>
+    </div>
+</div>

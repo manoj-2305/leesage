@@ -1,0 +1,55 @@
+<!-- Analytics Content -->
+<div class="analytics-content">
+    <div class="analytics-header">
+        <h3>Store Analytics</h3>
+        <p>Detailed insights into your store's performance.</p>
+    </div>
+
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-icon"><i class="fas fa-dollar-sign"></i></div>
+            <div class="stat-info">
+                <h3>Total Sales</h3>
+                <p id="totalSales">₹0.00</p>
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon"><i class="fas fa-users"></i></div>
+            <div class="stat-info">
+                <h3>New Customers</h3>
+                <p id="newCustomersCount">0</p>
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon"><i class="fas fa-shopping-bag"></i></div>
+            <div class="stat-info">
+                <h3>Orders Placed</h3>
+                <p id="ordersPlacedCount">0</p>
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon"><i class="fas fa-box"></i></div>
+            <div class="stat-info">
+                <h3>Products</h3>
+                <p id="productsCount">0</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="chart-section">
+        <h4>Sales Over Time</h4>
+        <canvas id="salesChart"></canvas>
+    </div>
+
+    <div class="chart-section">
+        <h4>Top Selling Products</h4>
+        <canvas id="topProductsChart"></canvas>
+    </div>
+
+    <div class="chart-section">
+        <h4>Customer Demographics</h4>
+        <canvas id="customerDemographicsChart"></canvas>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

@@ -1,0 +1,298 @@
+<!-- Security Settings Content -->
+<div class="security-content">
+    <div class="security-header">
+        <h3>Security Settings</h3>
+        <p>Manage account security, two-factor authentication, and activity logs.</p>
+    </div>
+
+    <div class="security-section">
+        <h4>Two-Factor Authentication (2FA)</h4>
+        <p>Add an extra layer of security to your account.</p>
+        <div class="toggle-switch">
+            <label class="switch">
+                <input type="checkbox" id="2faToggle">
+                <span class="slider round"></span>
+            </label>
+            <span id="2faStatus">2FA is Disabled</span>
+        </div>
+        <button class="btn btn-primary" id="setup2faBtn" style="display: none;">Setup 2FA</button>
+    </div>
+
+    <div class="security-section">
+        <h4>Change Password</h4>
+        <p>Update your account password regularly for better security.</p>
+        <form id="changePasswordForm">
+            <div class="form-group">
+                <label for="currentPassword">Current Password:</label>
+                <input type="password" id="currentPassword" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="newPassword">New Password:</label>
+                <input type="password" id="newPassword" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="confirmNewPassword">Confirm New Password:</label>
+                <input type="password" id="confirmNewPassword" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary">Change Password</button>
+        </form>
+    </div>
+
+    <div class="security-section">
+        <h4>Recent Activity</h4>
+        <p>Review recent login attempts and account activity.</p>
+        <table class="activity-table">
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Activity</th>
+                    <th>IP Address</th>
+                    <th>Location</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2024-07-20 10:30 AM</td>
+                    <td>Logged in</td>
+                    <td>192.168.1.100</td>
+                    <td>New York, USA</td>
+                </tr>
+                <tr>
+                    <td>2024-07-19 03:15 PM</td>
+                    <td>Failed login attempt</td>
+                    <td>203.0.113.45</td>
+                    <td>London, UK</td>
+                </tr>
+                <tr>
+                    <td>2024-07-19 09:00 AM</td>
+                    <td>Password changed</td>
+                    <td>192.168.1.100</td>
+                    <td>New York, USA</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const twoFaToggle = document.getElementById('2faToggle');
+        const twoFaStatus = document.getElementById('2faStatus');
+        const setup2faBtn = document.getElementById('setup2faBtn');
+        const changePasswordForm = document.getElementById('changePasswordForm');
+
+        // Initialize 2FA status (can be fetched from backend)
+        let is2faEnabled = false; // Example: false by default
+        update2faUI();
+
+        twoFaToggle.addEventListener('change', function() {
+            is2faEnabled = this.checked;
+            update2faUI();
+            if (is2faEnabled) {
+                alert('2FA Enabled! You might need to set it up.');
+                // Here you would typically initiate the 2FA setup process (e.g., show QR code)
+            } else {
+                alert('2FA Disabled!');
+                // Here you would typically initiate the 2FA disable process
+            }
+        });
+
+        setup2faBtn.addEventListener('click', function() {
+            alert('Initiating 2FA setup process...');
+            // Logic to guide user through 2FA setup
+        });
+
+        changePasswordForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const currentPass = document.getElementById('currentPassword').value;
+            const newPass = document.getElementById('newPassword').value;
+            const confirmNewPass = document.getElementById('confirmNewPassword').value;
+
+            if (newPass !== confirmNewPass) {
+                alert('New password and confirmation do not match!');
+                return;
+            }
+            if (newPass.length < 6) {
+                alert('New password must be at least 6 characters long.');
+                return;
+            }
+
+            console.log('Changing password:', { currentPass, newPass });
+            alert('Password change request sent. (This is a placeholder)');
+            // Implement AJAX call to backend to change password
+            changePasswordForm.reset();
+        });
+
+        function update2faUI() {
+            if (is2faEnabled) {
+                twoFaStatus.textContent = '2FA is Enabled';
+                setup2faBtn.style.display = 'none'; // Hide setup button if already enabled
+            } else {
+                twoFaStatus.textContent = '2FA is Disabled';
+                setup2faBtn.style.display = 'inline-block'; // Show setup button if disabled
+            }
+            twoFaToggle.checked = is2faEnabled;
+        }
+    });
+</script>
+
+<style>
+    /* Basic styling for the security page */
+    .security-content {
+        padding: 20px;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .security-header {
+        margin-bottom: 30px;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 15px;
+    }
+
+    .security-section {
+        background-color: #fff;
+        padding: 25px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        margin-bottom: 20px;
+    }
+
+    .security-section h4 {
+        color: #333;
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #555;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+
+    .toggle-switch {
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .toggle-switch span {
+        margin-left: 10px;
+        font-weight: bold;
+        color: #555;
+    }
+
+    /* The switch - the box around the slider */
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+    }
+
+    /* Hide default HTML checkbox */
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    /* The slider */
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    input:checked + .slider {
+        background-color: #2196F3;
+    }
+
+    input:focus + .slider {
+        box-shadow: 0 0 1px #2196F3;
+    }
+
+    input:checked + .slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+    }
+
+    /* Rounded sliders */
+    .slider.round {
+        border-radius: 34px;
+    }
+
+    .slider.round:before {
+        border-radius: 50%;
+    }
+
+    .activity-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+    }
+
+    .activity-table th,
+    .activity-table td {
+        border: 1px solid #eee;
+        padding: 10px;
+        text-align: left;
+    }
+
+    .activity-table th {
+        background-color: #f8f8f8;
+        font-weight: bold;
+        color: #666;
+    }
+
+    .activity-table tbody tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+</style>

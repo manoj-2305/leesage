@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lee Sage - Luxury Fashion</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../static/css/style.css" />
+  <link rel="stylesheet" href="../static/css/home.css" />
+  <link rel="stylesheet" href="../static/css/footer.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+<body>
+  <div class="top-banner">
+    Welcome to LEE SAGE - 50% off
+  </div>
+  <header>
+    <div class="container">
+      <div class="logo" onclick="window.location.href='/leesage/index.html'">
+        <img src="/leesage/assets/images/IMG_6916-removebg-preview.png" alt="Lee Sage Logo" class="logo-image" />
+        <span>Lee Sage</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="home.html" class="active">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li class="nav-login"><a href="login.html">Login</a></li>
+          <li><a href="cart.html" aria-label="Cart">
+                <span class="cart-icon" data-count="0">🛒</span>
+              </a>
+          </li>
+          <li class="nav-profile" style="display: none;">
+            <a href="profile.html" class="profile-icon">
+              <div class="profile-avatar">
+                <span class="avatar-text">U</span>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="hamburger" aria-label="Toggle navigation" role="button" tabindex="0">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Fullscreen Background Video -->
+  <section class="video-section">
+    <video id="background-video" autoplay muted loop playsinline class="background-video">
+      <source src="/leesage/assets/videos/main-video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </section>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>LIVE IN LUXURY</h1>
+      <p>Discover our exclusive collection of premium clothing crafted with the finest materials and designed to elevate your style.</p>
+      <a href="shop.html" class="btn">Explore Collection</a>
+    </div>
+  </section>
+
+  <!-- Featured Products -->
+  <section class="section featured-products">
+    <div class="container">
+      <div class="section-title">
+        <h2>Featured Selections</h2>
+      </div>
+      <div class="products-carousel">
+        <div class="products-scroll-container" data-visible-products="3">
+          <div class="products-container" id="featured-products">
+            <!-- Featured products will be dynamically loaded here by JavaScript -->
+            <div class="loading-indicator">
+              <div class="spinner"></div>
+              <p>Loading featured products...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section about-section home-about-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>About Lee Sage</h2>
+      </div>
+      <div class="about-content home-about-content">
+        <div class="about-text">
+          <p>
+            Lee Sage is a premium fashion and lifestyle clothing brand dedicated to luxury, minimalism, and smooth user experience.
+            Our collections are crafted with the finest materials and designed to elevate your style.
+          </p>
+          <p>
+            We believe in timeless elegance and quality craftsmanship. Our mission is to provide our customers with clothing that not only looks good but feels exceptional.
+          </p>
+          <a href="about.html" class="btn">Learn More</a>
+        </div>
+        <div class="about-image">
+          <img src="/leesage/assets/images/97997d25-ac8f-475c-8f75-28c5653e177d.png" alt="Lee Sage Store">
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Luxury Experience Section -->
+<section class="luxury-experience-section">
+  <div class="luxury-container">
+    <div class="luxury-content">
+      <h2 class="luxury-title">Experience the Luxury of Lee Sage</h2>
+      <p class="luxury-subtitle">Immerse yourself in premium fashion crafted with the finest materials and timeless elegance</p>
+      <a href="shop.html" class="luxury-cta-button">Order Now</a>
+    </div>
+    <div class="luxury-features">
+      <div class="luxury-feature">
+        <div class="feature-icon">✨</div>
+        <h3>Premium Quality</h3>
+        <p>Handcrafted with luxury materials</p>
+      </div>
+      <div class="luxury-feature">
+        <div class="feature-icon">🚚</div>
+        <h3>Fast Shipping</h3>
+        <p>Express delivery worldwide</p>
+      </div>
+      <div class="luxury-feature">
+        <div class="feature-icon">💎</div>
+        <h3>Exclusive Designs</h3>
+        <p>Limited edition collections</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="../static/js/script.js"></script>
+<script src="../static/js/home.js"></script>
+  <div id="footer-placeholder"></div>
+  <script>
+    function loadHTML(elementId, filePath) {
+      fetch(filePath)
+        .then(response => response.text())
+        .then(html => {
+          document.getElementById(elementId).innerHTML = html;
+        })
+        .catch(error => console.error('Error loading HTML:', error));
+    }
+    loadHTML('footer-placeholder', 'includes/footer.html');
+  </script>
+</body>
+</html>

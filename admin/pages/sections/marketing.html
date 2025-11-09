@@ -1,0 +1,80 @@
+<!-- Marketing Content -->
+<div class="marketing-content">
+    <div class="marketing-header">
+        <h3>Marketing Campaigns</h3>
+        <p>Manage your promotional activities and campaigns.</p>
+    </div>
+
+    <!-- Campaign Report Section -->
+    <div class="campaign-report-section" style="display: none;">
+        <button class="btn btn-secondary back-to-campaigns-btn"><i class="fas fa-arrow-left"></i> Back to Campaigns</button>
+        <h3 id="reportCampaignName"></h3>
+        <div id="reportDetails"></div>
+        <div id="reportContent">
+            <!-- Report data will be loaded here -->
+            <canvas id="campaignPerformanceChart"></canvas>
+        </div>
+    </div>
+
+    <div class="campaign-actions">
+        <button class="btn btn-primary" id="createCampaignBtn">
+            <i class="fas fa-plus"></i> Create New Campaign
+        </button>
+    </div>
+
+    <div class="campaign-list">
+
+    </div>
+
+    <!-- Create/Edit Campaign Modal -->
+    <div class="modal" id="campaignModal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="campaignModalTitle">Create New Campaign</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="campaignForm">
+                    <input type="hidden" id="campaignId">
+                    <div class="form-group">
+                        <label for="campaignName">Campaign Name</label>
+                        <input type="text" id="campaignName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="campaignType">Campaign Type</label>
+                        <select id="campaignType">
+                            <option value="discount">Discount Code</option>
+                            <option value="email">Email Series</option>
+                            <option value="social">Social Media</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="campaignStatus">Status</label>
+                        <select id="campaignStatus">
+                            <option value="active">Active</option>
+                            <option value="inactive">Inactive</option>
+                            <option value="scheduled">Scheduled</option>
+                            <option value="completed">Completed</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="campaignStartDate">Start Date</label>
+                        <input type="date" id="campaignStartDate">
+                    </div>
+                    <div class="form-group">
+                        <label for="campaignEndDate">End Date</label>
+                        <input type="date" id="campaignEndDate">
+                    </div>
+                    <div class="form-group">
+                        <label for="campaignDescription">Description</label>
+                        <textarea id="campaignDescription"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="cancelCampaign">Cancel</button>
+                <button type="submit" class="btn btn-primary" form="campaignForm">Save Campaign</button>
+            </div>
+        </div>
+    </div>
+</div>

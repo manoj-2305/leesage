@@ -1,0 +1,68 @@
+<!-- Admin Profile Section -->
+<div class="profile-content">
+    <div class="profile-header">
+        <h3>Admin Profile</h3>
+        <p>Manage your account settings and personal information</p>
+    </div>
+
+    <div class="profile-container">
+        <!-- Profile Overview -->
+        <div class="profile-overview">
+            <div class="profile-avatar">
+                <img id="profileImage" src="https://via.placeholder.com/150" alt="Admin Profile">
+                <form id="profileImageUploadForm" enctype="multipart/form-data" style="display: none;">
+                    <input type="file" id="profileImageInput" name="profile_image" accept="image/*">
+                </form>
+                <button class="change-photo-btn" id="changeProfilePhotoBtn">
+                    <i class="fas fa-camera"></i> Change Photo
+                </button>
+            </div>
+            
+            <div class="profile-info">
+                <h4 id="profile-fullname">Loading...</h4>
+                <p id="profile-email">Loading...</p>
+                <p class="profile-role" id="profile-role">Loading...</p> 
+                <p id="profile-last-login">Loading...</p>
+            </div>
+        </div>
+
+        <!-- Profile Details Form -->
+        <div class="profile-details">
+            <h5>Personal Information</h5>
+            <form id="profileForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="profile-username" name="username" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="profile-email-input" name="email">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="full_name">Full Name</label>
+                        <input type="text" id="profile-fullname-input" name="full_name">
+                    </div>
+                    <div class="form-group">
+                        <label for="role">Role</label>
+                        <input type="text" id="profile-role-input" name="role" readonly>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="last_login">Last Login</label>
+                    <input type="text" id="profile-last-login-input" name="last_login" readonly>
+                </div>
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+            </form>
+        </div>
+
+        <!-- Security Settings -->
+        <div class="profile-security">
+            <h5>Security Settings</h5>
+            <button class="btn btn-secondary" onclick="location.href='change-password.html'">Change Password</button>
+            <button class="btn btn-secondary">Enable Two-Factor Auth</button>
+        </div>
+    </div>
+</div>

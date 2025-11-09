@@ -1,0 +1,87 @@
+<!-- Payments Management Content -->
+<div class="payments-content">
+    <div class="payments-header">
+        <h3>Payments & Transactions</h3>
+        <p>View and manage all payment records and transactions.</p>
+    </div>
+<script src="../../static/js/payments.js"></script>
+
+    <div class="payment-filters">
+        <select id="paymentStatusFilter">
+            <option value="">All Status</option>
+            <option value="completed">Completed</option>
+            <option value="pending">Pending</option>
+            <option value="failed">Failed</option>
+            <option value="refunded">Refunded</option>
+        </select>
+        <input type="date" id="paymentDateFrom" placeholder="From Date">
+        <input type="date" id="paymentDateTo" placeholder="To Date">
+        <input type="text" id="paymentSearch" placeholder="Search by transaction ID or customer...">
+        <button class="btn btn-primary" onclick="filterPayments()">Filter</button>
+    </div>
+
+    <div class="payments-table-container">
+        <table class="payments-table">
+            <thead>
+                <tr>
+                    <th>Transaction ID</th>
+                    <th>Order ID</th>
+                    <th>Customer</th>
+                    <th>Amount</th>
+                    <th>Method</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Payment rows will be loaded dynamically -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Transaction Details Modal -->
+    <div class="modal" id="transactionDetailsModal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>Transaction Details</h4>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Transaction ID:</strong> <span id="modalTransactionId"></span></p>
+                <p><strong>Order ID:</strong> <span id="modalOrderId"></span></p>
+                <p><strong>Customer:</strong> <span id="modalCustomerName"></span></p>
+                <p><strong>Amount:</strong> <span id="modalAmount"></span></p>
+                <p><strong>Payment Method:</strong> <span id="modalPaymentMethod"></span></p>
+                <p><strong>Transaction Date:</strong> <span id="modalTransactionDate"></span></p>
+                <p><strong>Status:</strong> <span id="modalTransactionStatus"></span></p>
+                <hr>
+                <h5>Additional Details:</h5>
+                <p id="modalAdditionalDetails">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <hr>
+                <h5>Payment History:</h5>
+                <div id="modalPaymentHistory"></div>
+                <hr>
+                <h5>User Details:</h5>
+                <p><strong>User ID:</strong> <span id="modalUserId"></span></p>
+                <p><strong>Username:</strong> <span id="modalUsername"></span></p>
+                <p><strong>Email:</strong> <span id="modalUserEmail"></span></p>
+                <hr>
+                <h5>Order Details:</h5>
+                <p><strong>Order Total:</strong> <span id="modalOrderTotal"></span></p>
+                <p><strong>Order Date:</strong> <span id="modalOrderDate"></span></p>
+                <div id="modalOrderItems"></div>
+                <hr>
+                <h5>Shipping Address:</h5>
+                <p><span id="modalShippingAddress"></span></p>
+                <hr>
+                <h5>Billing Address:</h5>
+                <p><span id="modalBillingAddress"></span></p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeTransactionModal()">Close</button>
+                <button class="btn btn-warning" id="modalRefundBtn">Process Refund</button>
+            </div>
+        </div>
+    </div>
+</div>

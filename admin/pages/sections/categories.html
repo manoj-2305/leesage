@@ -1,0 +1,54 @@
+<!-- Categories Management Content -->
+<div class="categories-content">
+    <div class="categories-header">
+        <h3>Product Categories</h3>
+        <div class="category-actions">
+            <button class="btn btn-primary" id="addCategoryBtn">
+                <i class="fas fa-plus"></i> Add Category
+            </button>
+        </div>
+    </div>
+
+    <div class="categories-table-container">
+        <table class="categories-table">
+            <thead>
+                <tr>
+                    <th>Category ID</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Category rows will be loaded dynamically -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Add/Edit Category Modal -->
+    <div class="modal" id="categoryModal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="categoryModalTitle">Add New Category</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="categoryForm">
+                    <input type="hidden" id="categoryId">
+                    <div class="form-group">
+                        <label for="categoryName">Category Name</label>
+                        <input type="text" id="categoryName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="categoryDescription">Description</label>
+                        <textarea id="categoryDescription"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="cancelCategory">Cancel</button>
+                <button type="submit" class="btn btn-primary" form="categoryForm">Save Category</button>
+            </div>
+        </div>
+    </div>
+</div>

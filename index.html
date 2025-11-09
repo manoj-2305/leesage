@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lee Sage - Luxury Fashion</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="public/static/css/style.css" />
+  <style>
+    body, html {
+      margin: 0;
+      height: 100%;
+      background-color: var(--color-black);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+    .logo-container {
+      animation: fadeOutZoom 1s ease-in-out 2.5s forwards;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      padding: 20px;
+    }
+    .logo-container video {
+      max-width: 90vw;
+      max-height: 90vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+    }
+    @keyframes fadeOutZoom {
+      0% {
+        opacity: 1;
+        transform: scale(1);
+      }
+      100% {
+        opacity: 0;
+        transform: scale(1.2);
+        visibility: hidden;
+      }
+    }
+    
+    /* Mobile responsive styles */
+    @media (max-width: 768px) {
+      body, html {
+        overflow: visible;
+      }
+      .logo-container {
+        padding: 10px;
+      }
+      .logo-container video {
+        max-width: 95vw;
+        max-height: 95vh;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .logo-container video {
+        max-width: 100vw;
+        max-height: 100vh;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="logo-container">
+    <video autoplay muted loop playsinline>
+      <source src="assets/videos/logoani.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <script>
+    // Redirect after 2 seconds to home.html
+    setTimeout(function () {
+      window.location.href = "public/pages/home.html";
+    }, 2000);
+  </script>
+</body>
+</html>

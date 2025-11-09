@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Product Details - Lee Sage</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../static/css/style.css" />
+  <link rel="stylesheet" href="../static/css/product.css" />
+  <link rel="stylesheet" href="../static/css/footer.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+<body>
+  <div class="top-banner">
+    Welcome to LEE SAGE - 50% off
+  </div>
+  <header>
+    <div class="container">
+      <div class="logo" onclick="window.location.href='home.html'">
+        <img src="../../assets/images/IMG_6916-removebg-preview.png" alt="Lee Sage Logo" class="logo-image" />
+        <span>Lee Sage</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li class="nav-login"><a href="login.html">Login</a></li>
+          <li><a href="cart.html" aria-label="Cart">
+            <span class="cart-icon" data-count="0">🛒</span>
+          </a></li>
+          <li class="nav-profile" style="display: none;"><a href="profile.html" class="profile-icon"></a></li>
+        </ul>
+      </nav>
+      <div class="hamburger" aria-label="Toggle navigation" role="button" tabindex="0">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="product-container">
+      <div class="product-gallery">
+        <div class="main-image-container">
+          <img src="" alt="Product Image" class="main-image" id="mainImage">
+        </div>
+        <div class="thumbnails" id="thumbnailsContainer">
+          <!-- Thumbnails will be loaded dynamically -->
+        </div>
+      </div>
+      
+      <div class="product-details">
+        <h1 id="productName">Product Name</h1>
+        <div class="product-rating">
+          <div class="stars" id="productRating">
+            <!-- Stars will be generated dynamically -->
+          </div>
+          <span id="reviewCount">(0 reviews)</span>
+        </div>
+        
+        <div class="product-price">
+          <span id="productPrice">₹0.00</span>
+          <span id="productDiscountPrice" class="discount-price"></span>
+        </div>
+        
+        <div class="product-description" id="productDescription">
+          <!-- Product description will be loaded dynamically -->
+        </div>
+        
+        <div class="product-options">
+          <div class="size-selection">
+            <h3>Size</h3>
+            <div class="size-options" id="sizeOptions">
+              <!-- Size options will be loaded dynamically -->
+            </div>
+          </div>
+          
+          <div class="quantity-control">
+            <h3>Quantity</h3>
+            <div class="quantity-wrapper">
+              <button type="button" class="quantity-btn" data-action="decrease">-</button>
+              <input type="number" class="quantity-input" value="1" min="1" max="99">
+              <button type="button" class="quantity-btn" data-action="increase">+</button>
+            </div>
+          </div>
+        </div>
+        
+        <form id="add-to-cart-form">
+          <input type="hidden" name="product_id" id="productId" value="">
+          <input type="hidden" name="selected_size" value="">
+          <input type="hidden" name="quantity" value="1">
+          
+          <div class="product-actions">
+            <button type="submit" class="btn btn-add-cart">Add to Cart</button>
+            <button type="submit" class="btn btn-buy-now">Buy Now</button>
+            <button type="button" class="btn-wishlist" id="addToWishlist">
+              <i class="far fa-heart"></i>
+            </button>
+          </div>
+        </form>
+        
+        <div class="product-meta">
+          <p><strong>SKU:</strong> <span id="productSku"></span></p>
+          <p><strong>Category:</strong> <span id="productCategory"></span></p>
+          <p><strong>Availability:</strong> <span id="productAvailability"></span></p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="product-tabs">
+      <div class="tabs-header">
+        <button class="tab-btn active" data-tab="description">Description</button>
+        <button class="tab-btn" data-tab="reviews">Reviews</button>
+      </div>
+      
+      <div class="tabs-content">
+        <div class="tab-panel active" id="descriptionTab">
+          <div id="fullDescription">
+            <!-- Full product description will be loaded dynamically -->
+          </div>
+        </div>
+        
+        <div class="tab-panel" id="reviewsTab">
+          <div class="reviews-summary">
+            <div class="average-rating">
+              <h3>Customer Reviews</h3>
+              <div class="rating-value" id="averageRating">0.0</div>
+              <div class="stars" id="averageRatingStars">
+                <!-- Stars will be generated dynamically -->
+              </div>
+              <div id="totalReviews">Based on 0 reviews</div>
+            </div>
+            
+            <div class="rating-distribution" id="ratingDistribution">
+              <!-- Rating distribution will be loaded dynamically -->
+            </div>
+          </div>
+          
+          <div class="reviews-list" id="reviewsList">
+            <!-- Reviews will be loaded dynamically -->
+          </div>
+          
+          <div class="review-pagination" id="reviewPagination">
+            <!-- Pagination will be loaded dynamically -->
+          </div>
+          
+          <div class="write-review" id="writeReviewSection">
+            <h3>Write a Review</h3>
+            <form id="reviewForm">
+              <input type="hidden" name="product_id" value="">
+              
+              <div class="form-group">
+                <label>Rating</label>
+                <div class="rating-input">
+                  <i class="far fa-star" data-rating="1"></i>
+                  <i class="far fa-star" data-rating="2"></i>
+                  <i class="far fa-star" data-rating="3"></i>
+                  <i class="far fa-star" data-rating="4"></i>
+                  <i class="far fa-star" data-rating="5"></i>
+                </div>
+                <input type="hidden" name="rating" value="0">
+              </div>
+              
+              <div class="form-group">
+                <label for="reviewTitle">Title</label>
+                <input type="text" id="reviewTitle" name="title" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="reviewContent">Review</label>
+                <textarea id="reviewContent" name="content" rows="5" required></textarea>
+              </div>
+              
+              <button type="submit" class="btn">Submit Review</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <section class="related-products">
+      <h2>Related Products</h2>
+      <div class="products-container" id="relatedProducts">
+        <!-- Related products will be loaded dynamically -->
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-placeholder"></div>
+  <script>
+    function loadHTML(elementId, filePath) {
+      fetch(filePath)
+        .then(response => response.text())
+        .then(html => {
+          document.getElementById(elementId).innerHTML = html;
+        })
+        .catch(error => console.error('Error loading HTML:', error));
+    }
+    loadHTML('footer-placeholder', 'includes/footer.html');
+  </script>
+
+  <script src="../static/js/script.js"></script>
+  <script src="../static/js/product.js"></script>
+</body>
+</html>

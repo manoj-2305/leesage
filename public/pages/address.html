@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Address Management - Lee Sage</title>
+  <link rel="stylesheet" href="../../public/static/css/style.css" />
+  <link rel="stylesheet" href="../../public/static/css/cart.css" />
+  <link rel="stylesheet" href="../../public/static/css/address.css" />
+  <link rel="stylesheet" href="../static/css/footer.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+<body>
+  <div class="top-banner">
+    WE ARE WAITING FOR YOUR ORDER
+  </div>
+  <header>
+    <div class="container">
+      <div class="logo" onclick="window.location.href='/leesage/index.html'">
+        <img src="/leesage/assets/images/IMG_6916-removebg-preview.png" alt="Lee Sage Logo" class="logo-image" />
+        <span>Lee Sage</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li class="nav-login"><a href="login.html">Login</a></li>
+          <li><a href="cart.html" aria-label="Cart">
+                <span class="cart-icon" data-count="0">🛒</span>
+              </a>
+          </li>
+          <li class="nav-profile" style="display: none;">
+            <a href="profile.html" class="profile-icon">
+              <div class="profile-avatar">
+                <span class="avatar-text">U</span>
+              </div>
+            </a>
+          </li>
+      <div class="hamburger" aria-label="Toggle navigation" role="button" tabindex="0">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </header>
+  <div class="cart-container">
+    <div class="address-header">
+      <h1>Manage Addresses</h1>
+      <button id="add-address-btn" class="checkout-btn"><i class="fas fa-pencil-alt"></i> Add New Address</button>
+    </div>
+    <div id="address-list" class="address-list">
+      <!-- Addresses will be loaded here -->
+    </div>
+    <div class="checkout-button-container">
+      <button id="proceed-to-checkout-btn" class="checkout-btn" disabled>Proceed to Checkout</button>
+    </div>
+    <div id="address-form-hidden" class="address-form" style="display: none;">
+      <h2 id="form-title-hidden">Add Address</h2>
+      <form id="address-form-element-hidden">
+        <input type="hidden" id="address-id-hidden" name="id" />
+        <div class="form-group">
+          <label for="address_line1-hidden">Address Line 1 *</label>
+          <input type="text" id="address_line1-hidden" name="address_line1" required />
+        </div>
+        <div class="form-group">
+          <label for="address_line2-hidden">Address Line 2</label>
+          <input type="text" id="address_line2-hidden" name="address_line2" />
+        </div>
+        <div class="form-group">
+          <label for="city-hidden">City *</label>
+          <input type="text" id="city-hidden" name="city" required />
+        </div>
+        <div class="form-group">
+          <label for="state_province-hidden">State/Province *</label>
+          <input type="text" id="state_province-hidden" name="state_province" required />
+        </div>
+        <div class="form-group">
+          <label for="postal_code-hidden">Postal Code *</label>
+          <input type="text" id="postal_code-hidden" name="postal_code" required />
+        </div>
+        <div class="form-group">
+          <label for="country-hidden">Country *</label>
+          <input type="text" id="country-hidden" name="country" required />
+        </div>
+        <div class="form-group">
+          <label for="phone_number-hidden">Phone Number *</label>
+          <input type="text" id="phone_number-hidden" name="phone_number" required />
+        </div>
+        <div class="form-group">
+          <label>
+            <input type="checkbox" id="is_default-hidden" name="is_default" /> Set as default address
+          </label>
+        </div>
+        <button type="submit" class="checkout-btn">Save Address</button>
+        <button type="button" id="cancel-btn-hidden" class="remove-btn">Cancel</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Address Form Modal -->
+  <div id="address-modal" class="modal-overlay">
+    <div class="modal-content">
+      <h2 id="form-title">Add Address</h2>
+      <form id="address-form-element">
+        <input type="hidden" id="address-id" name="id" />
+        <div class="form-group">
+          <label for="address_line1">Address Line 1 *</label>
+          <input type="text" id="address_line1" name="address_line1" required />
+        </div>
+        <div class="form-group">
+          <label for="address_line2">Address Line 2</label>
+          <input type="text" id="address_line2" name="address_line2" />
+        </div>
+        <div class="form-group">
+          <label for="city">City *</label>
+          <input type="text" id="city" name="city" required />
+        </div>
+        <div class="form-group">
+          <label for="state_province">State/Province *</label>
+          <input type="text" id="state_province" name="state_province" required />
+        </div>
+        <div class="form-group">
+          <label for="postal_code">Postal Code *</label>
+          <input type="text" id="postal_code" name="postal_code" required />
+        </div>
+        <div class="form-group">
+          <label for="country">Country *</label>
+          <input type="text" id="country" name="country" required />
+        </div>
+        <div class="form-group">
+          <label for="phone_number">Phone Number *</label>
+          <input type="text" id="phone_number" name="phone_number" required />
+        </div>
+        <div class="form-group">
+          <label>
+            <input type="checkbox" id="is_default" name="is_default" /> Set as default address
+          </label>
+        </div>
+        <button type="submit" class="checkout-btn">Save Address</button>
+        <button type="button" id="cancel-btn" class="remove-btn">Cancel</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="../../public/static/js/script.js"></script>
+  <script src="../../public/static/js/address.js"></script>

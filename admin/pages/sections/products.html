@@ -1,0 +1,184 @@
+<!-- Products Management Content -->
+<div class="products-content">
+    <div class="products-header">
+        <h3>All Products</h3>
+        <div class="product-actions">
+            <button class="btn btn-primary" id="addProductBtn">
+                <i class="fas fa-plus"></i> Add Product
+            </button>
+        </div>
+    </div>
+
+    <div class="products-table-container">
+        <table class="products-table">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Discount Price</th>
+                    <th>SKU</th>
+                    <th>Sizes & Stock</th>
+                    <th>Featured</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Product rows will be loaded dynamically -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Add Product Modal -->
+    <div class="modal-overlay" id="addProductModal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add New Product</h3>
+                <button class="modal-close" id="modalClose">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="addProductForm" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="product_name">Product Name *</label>
+                        <input type="text" id="product_name" name="product_name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea id="description" name="description" rows="4"></textarea>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="price">Price *</label>
+                            <input type="number" id="price" name="price" step="0.01" min="0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="discount_price">Discount Price</label>
+                            <input type="number" id="discount_price" name="discount_price" step="0.01" min="0">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="sku">SKU</label>
+                            <input type="text" id="sku" name="sku">
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label>Product Sizes</label>
+                        <div id="product_sizes_container">
+                            <!-- Size inputs will be added here dynamically -->
+                            <div class="size-input-group">
+                                <input type="text" name="sizes[]" placeholder="Size (e.g., S, M, L)" required>
+                                <input type="number" name="stock_quantities[]" placeholder="Stock Quantity" min="0" required>
+                                <input type="number" name="min_stock_levels[]" placeholder="Min Stock Level" min="0" value="0">
+                                <button type="button" class="btn btn-danger remove-size">Remove</button>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-secondary" id="add_size_field">Add Another Size</button>
+                    </div>
+                    <div class="form-group">
+                        <label for="category_id">Category *</label>
+                        <select id="category_id" name="category_id" required>
+                            <option value="">Select Category</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group form-check">
+                            <input type="checkbox" id="is_featured" name="is_featured" value="1">
+                            <label for="is_featured">Featured Product</label>
+                        </div>
+                        <div class="form-group form-check">
+                            <input type="checkbox" id="is_active" name="is_active" value="1" checked>
+                            <label for="is_active">Active Product</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="product_images">Product Images</label>
+                        <input type="file" id="product_images" name="product_images[]" multiple accept="image/*">
+                        <small class="form-text text-muted">Select multiple images for your product</small>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="cancelAddProduct">Cancel</button>
+                <button type="submit" class="btn btn-primary">Add Product</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Product Modal -->
+    <div class="modal-overlay" id="editProductModal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Edit Product</h3>
+                <button class="modal-close" id="editModalClose">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="editProductForm" enctype="multipart/form-data">
+                    <input type="hidden" name="product_id" id="edit_product_id" value="">
+                    <div class="form-group">
+                        <label for="edit_product_name">Product Name *</label>
+                        <input type="text" id="edit_product_name" name="product_name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit_description">Description *</label>
+                        <textarea id="edit_description" name="description" rows="4" required></textarea>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="edit_price">Price *</label>
+                            <input type="number" id="edit_price" name="price" step="0.01" min="0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="edit_discount_price">Discount Price</label>
+                            <input type="number" id="edit_discount_price" name="discount_price" step="0.01" min="0">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="edit_sku">SKU</label>
+                            <input type="text" id="edit_sku" name="sku">
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label>Product Sizes</label>
+                        <div id="edit_product_sizes_container">
+                            <!-- Size inputs will be loaded and added here dynamically -->
+                        </div>
+                        <button type="button" class="btn btn-secondary" id="edit_add_size_field">Add Another Size</button>
+                    </div>
+                    <div class="form-group">
+                        <label>Categories *</label>
+                        <select id="edit_categories" name="categories[]" multiple required class="form-control">
+                            <!-- Categories will be loaded dynamically -->
+                        </select>
+                        <small class="form-text text-muted">Hold Ctrl/Cmd to select multiple categories</small>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group form-check">
+                            <input type="checkbox" id="edit_is_featured" name="is_featured" value="1">
+                            <label for="edit_is_featured">Featured Product</label>
+                        </div>
+                        <div class="form-group form-check">
+                            <input type="checkbox" id="edit_is_active" name="is_active" value="1" checked>
+                            <label for="edit_is_active">Active Product</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit_product_images">Product Images</label>
+                        <input type="file" id="edit_product_images" name="product_images[]" multiple accept="image/*">
+                        <small class="form-text text-muted">Select multiple images for your product</small>
+                    </div>
+                    <div id="current_images_preview" class="image-preview-container"></div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="cancelEditProduct">Cancel</button>
+                <button type="submit" class="btn btn-primary">Update Product</button>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,72 @@
+<!-- Reviews Management Content -->
+<div class="reviews-content">
+    <div class="reviews-header">
+        <h3>Product Reviews</h3>
+        <p>Manage customer reviews and ratings.</p>
+    </div>
+
+    <div class="review-filters">
+        <select id="reviewStatusFilter">
+            <option value="">All Status</option>
+            <option value="pending">Pending</option>
+            <option value="approved">Approved</option>
+            <option value="rejected">Rejected</option>
+        </select>
+        <input type="text" id="reviewSearch" placeholder="Search by product or customer...">
+        <button class="btn btn-primary" onclick="filterReviews()">Filter</button>
+    </div>
+
+    <div class="reviews-table-container">
+        <table class="reviews-table">
+            <thead>
+                <tr>
+                    <th>Review ID</th>
+                    <th>Product</th>
+                    <th>Customer</th>
+                    <th>Rating</th>
+                    <th>Comment</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="reviewsTableBody">
+                <!-- Review rows will be loaded dynamically by reviews.js -->
+            </tbody>
+        </table>
+    </div>
+
+    <div id="reviewsPagination" class="pagination-container"></div>
+
+    <!-- Review Details Modal -->
+    <div class="modal" id="reviewDetailsModal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>Review Details</h4>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Review ID:</strong> <span id="modalReviewId"></span></p>
+                <p><strong>Product:</strong> <span id="modalReviewProduct"></span></p>
+                <p><strong>Customer:</strong> <span id="modalReviewCustomer"></span></p>
+                <p><strong>Rating:</strong> <span id="modalReviewRating"></span></p>
+                <p><strong>Comment:</strong> <span id="modalReviewComment"></span></p>
+                <p><strong>Date:</strong> <span id="modalReviewDate"></span></p>
+                <p><strong>Status:</strong> <span id="modalReviewStatus"></span></p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeReviewModal()">Close</button>
+                <button class="btn btn-success" id="modalApproveBtn" data-review-id="">Approve</button>
+                <button class="btn btn-warning" id="modalPendingBtn" data-review-id="">Mark Pending</button>
+                <button class="btn btn-danger" id="modalRejectBtn" data-review-id="">Reject</button>
+            </div>
+        </div>
+    </div>
+</div>
+        });
+
+        document.getElementById('modalApproveBtn').addEventListener('click', () => updateReviewStatus(document.getElementById('modalReviewId').textContent, 'approved'));
+        document.getElementById('modalPendingBtn').addEventListener('click', () => updateReviewStatus(document.getElementById('modalReviewId').textContent, 'pending'));
+        document.getElementById('modalRejectBtn').addEventListener('click', () => updateReviewStatus(document.getElementById('modalReviewId').textContent, 'rejected'));
+    });
+</script>

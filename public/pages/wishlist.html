@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Wishlist - Lee Sage</title>
+  <link rel="stylesheet" href="../static/css/style.css" />
+  <link rel="stylesheet" href="../static/css/wishlist.css" />
+  <link rel="stylesheet" href="../static/css/footer.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <!-- Wishlist styles are in wishlist.css -->
+</head>
+<body>
+  <div class="top-banner">
+    WE ARE WAITING FOR YOUR ORDER
+  </div>
+  <header>
+    <div class="container">
+      <div class="logo" onclick="window.location.href='/leesage/index.html'">
+        <img src="/leesage/assets/images/IMG_6916-removebg-preview.png" alt="Lee Sage Logo" class="logo-image" />
+        <span>Lee Sage</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="home.html" class="active">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li class="nav-login"><a href="login.html">Login</a></li>
+          <li><a href="cart.html" aria-label="Cart">
+            <span class="cart-icon" data-count="0">🛒</span>
+          </a></li>
+          <li class="nav-profile" style="display: none;"><a href="profile.html" class="profile-icon"></a></li>
+        </ul>
+      </nav>
+      <div class="hamburger" aria-label="Toggle navigation" role="button" tabindex="0">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </header>
+  <div class="wishlist-container">
+    <h1>My Wishlist</h1>
+    <p class="empty-wishlist">Your wishlist is empty. <a href="shop.html">Continue shopping</a>.</p>
+    <!-- Wishlist items will be dynamically loaded here by JavaScript -->
+    <table>
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Stock Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Example static wishlist item (will be replaced by JS) -->
+          <!--
+          <tr data-product-id="1">
+            <td><img src="/leesage/assets/products/product1.jpg" alt="Product Name" class="product-image"></td>
+            <td>Product Name</td>
+            <td>₹10.00</td>
+            <td>In Stock</td>
+            <td>
+              <div class="action-buttons">
+                <button class="remove-btn">Remove</button>
+                <button class="add-to-cart-btn">Add to Cart</button>
+              </div>
+            </td>
+          </tr>
+          -->
+        </tbody>
+      </table>
+      <div class="wishlist-summary">
+        <strong>Total Items: 0</strong>
+      </div>
+      <a href="shop.html" class="shop-btn">Continue Shopping</a>
+  </div>
+
+  <script src="../static/js/script.js"></script>
+  <script src="../static/js/cart.js"></script>
+  <script src="../static/js/wishlist.js"></script>
+    <div id="footer-placeholder"></div>
+  <script>
+    function loadHTML(elementId, filePath) {
+      fetch(filePath)
+        .then(response => response.text())
+        .then(html => {
+          document.getElementById(elementId).innerHTML = html;
+        })
+        .catch(error => console.error('Error loading HTML:', error));
+    }
+    loadHTML('footer-placeholder', 'includes/footer.html');
+  </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!-- Inventory Management Content -->
+<div class="inventory-content">
+    <div class="inventory-header">
+        <h3>Inventory Management</h3>
+        <p>Track stock levels and manage product inventory.</p>
+    </div>
+
+    <div class="inventory-filters">
+        <select id="stockStatusFilter">
+            <option value="">All Stock</option>
+            <option value="in-stock">In Stock</option>
+            <option value="low-stock">Low Stock</option>
+            <option value="out-of-stock">Out of Stock</option>
+        </select>
+        <input type="text" id="inventorySearch" placeholder="Search by product name or SKU...">
+        <button class="btn btn-primary" onclick="filterInventory()">Filter</button>
+    </div>
+
+    <div class="inventory-table-container">
+        <table class="inventory-table">
+            <thead>
+                <tr>
+                    <th>Product ID</th>
+                    <th>Product Name</th>
+                    <th>SKU</th>
+                    <th>Size</th>
+                    <th>Current Stock</th>
+                    <th>Min Stock Level</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Inventory rows will be loaded dynamically -->
+
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Edit Inventory Modal -->
+    <div class="modal" id="inventoryModal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="inventoryModalTitle">Edit Inventory</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="inventoryForm">
+                    <input type="hidden" id="inventoryProductId">
+                    <div class="form-group">
+                        <label for="inventoryProductName">Product Name</label>
+                        <input type="text" id="inventoryProductName" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="inventoryCurrentStock">Current Stock</label>
+                        <input type="number" id="inventoryCurrentStock" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="inventoryMinStockLevel">Minimum Stock Level</label>
+                        <input type="number" id="inventoryMinStockLevel">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="cancelInventory">Cancel</button>
+                <button type="submit" class="btn btn-primary" form="inventoryForm">Save Changes</button>
+            </div>
+        </div>
+    </div>
+</div>

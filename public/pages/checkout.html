@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Checkout - Lee Sage</title>
+  <link rel="stylesheet" href="../../public/static/css/style.css" />
+  <link rel="stylesheet" href="../../public/static/css/cart.css" />
+  <link rel="stylesheet" href="../../public/static/css/checkout.css" />
+  <link rel="stylesheet" href="../static/css/footer.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+<body>
+  <div class="top-banner">
+    WE ARE WAITING FOR YOUR ORDER
+  </div>
+  <header>
+    <div class="container">
+      <div class="logo" onclick="window.location.href='/leesage/index.html'">
+        <img src="/leesage/assets/images/IMG_6916-removebg-preview.png" alt="Lee Sage Logo" class="logo-image" />
+        <span>Lee Sage</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li class="nav-login"><a href="login.html">Login</a></li>
+          <li><a href="cart.html" aria-label="Cart">
+                <span class="cart-icon" data-count="0">🛒</span>
+              </a>
+          </li>
+          <li class="nav-profile" style="display: none;">
+            <a href="profile.html" class="profile-icon">
+              <div class="profile-avatar">
+                <span class="avatar-text">U</span>
+              </div>
+            </a>
+          </li>
+      <div class="hamburger" aria-label="Toggle navigation" role="button" tabindex="0">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </header>
+  <div class="cart-container">
+    <h1>Checkout</h1>
+    <div id="checkout-content">
+      <div class="checkout-section">
+        <h2>Order Summary</h2>
+        <table id="checkout-items-table">
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Subtotal</th>
+            </tr>
+          </thead>
+          <tbody id="checkout-items-body">
+            <!-- Cart items will be loaded here -->
+          </tbody>
+        </table>
+      </div>
+      <div class="checkout-section">
+        <h2>Personal Details</h2>
+        <div id="personal-details">
+          <!-- Personal details will be displayed here -->
+        </div>
+      </div>
+      <div class="checkout-section">
+        <h2>Shipping Address</h2>
+        <div id="selected-address">
+          <!-- Selected address will be displayed here -->
+        </div>
+      </div>
+      <div class="checkout-section">
+        <h2>Coupon Code</h2>
+        <div class="form-group">
+          <input type="text" id="coupon-code" placeholder="Enter coupon code" />
+          <button id="apply-coupon-btn" class="checkout-btn">Apply</button>
+        </div>
+        <div id="coupon-message"></div>
+      </div>
+      <div class="checkout-section">
+        <h2>Payment Method</h2>
+        <div id="payment-methods-container">
+          <!-- Payment methods will be loaded here -->
+        </div>
+      </div>
+      <div class="checkout-section">
+        <h2>Order Totals</h2>
+        <div id="order-totals">
+          <!-- Totals will be calculated and displayed here -->
+        </div>
+      </div>
+      <button id="place-order-btn" class="checkout-btn">Place Order</button>
+    </div>
+  </div>
+
+  <script src="../../public/static/js/script.js"></script>
+  <script src="../../public/static/js/checkout.js"></script>
+    <div id="footer-placeholder"></div>
+  <script>
+    function loadHTML(elementId, filePath) {
+      fetch(filePath)
+        .then(response => response.text())
+        .then(html => {
+          document.getElementById(elementId).innerHTML = html;
+        })
+        .catch(error => console.error('Error loading HTML:', error));
+    }
+    loadHTML('footer-placeholder', 'includes/footer.html');
+  </script>
+</body>
+</html>

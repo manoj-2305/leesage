@@ -1,0 +1,55 @@
+[22-Aug-2025 16:03:40 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: json_decode(): Argument #1 ($json) must be of type string, array given in C:\xampp\htdocs\Leesage\backend\php\admin\actions\add_product.php:46
+Stack trace:
+#0 C:\xampp\htdocs\Leesage\backend\php\admin\actions\add_product.php(46): json_decode(Array, true)
+#1 {main}
+  thrown in C:\xampp\htdocs\Leesage\backend\php\admin\actions\add_product.php on line 46
+[22-Aug-2025 16:07:59 Europe/Berlin] Error adding product: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'TSHIRT-008' for key 'idx_sku'
+[22-Aug-2025 16:08:06 Europe/Berlin] Error adding product: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'TSHIRT-008' for key 'idx_sku'
+[22-Aug-2025 16:08:08 Europe/Berlin] Error adding product: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'TSHIRT-008' for key 'idx_sku'
+[22-Aug-2025 16:08:08 Europe/Berlin] Error adding product: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'TSHIRT-008' for key 'idx_sku'
+[22-Aug-2025 16:08:08 Europe/Berlin] Error adding product: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'TSHIRT-008' for key 'idx_sku'
+[22-Aug-2025 16:08:34 Europe/Berlin] Error adding product: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'TSHIRT-008' for key 'idx_sku'
+[22-Aug-2025 16:08:35 Europe/Berlin] Error adding product: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'TSHIRT-008' for key 'idx_sku'
+[22-Aug-2025 16:13:25 Europe/Berlin] Error adding product: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'TSHIRT-008' for key 'idx_sku'
+[22-Aug-2025 16:13:26 Europe/Berlin] Error adding product: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'TSHIRT-008' for key 'idx_sku'
+[22-Aug-2025 16:13:27 Europe/Berlin] Error adding product: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'TSHIRT-008' for key 'idx_sku'
+[22-Aug-2025 16:13:27 Europe/Berlin] Error adding product: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'TSHIRT-008' for key 'idx_sku'
+[22-Aug-2025 16:13:28 Europe/Berlin] Error adding product: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'TSHIRT-008' for key 'idx_sku'
+[22-Aug-2025 16:13:29 Europe/Berlin] Error adding product: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'TSHIRT-008' for key 'idx_sku'
+[22-Aug-2025 16:13:29 Europe/Berlin] Error adding product: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'TSHIRT-008' for key 'idx_sku'
+[22-Aug-2025 16:13:29 Europe/Berlin] Error adding product: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'TSHIRT-008' for key 'idx_sku'
+[22-Aug-2025 16:13:29 Europe/Berlin] Error adding product: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'TSHIRT-008' for key 'idx_sku'
+[22-Aug-2025 16:13:29 Europe/Berlin] Error adding product: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'TSHIRT-008' for key 'idx_sku'
+[22-Aug-2025 16:13:30 Europe/Berlin] Error adding product: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'TSHIRT-008' for key 'idx_sku'
+[22-Aug-2025 16:13:30 Europe/Berlin] Error adding product: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'TSHIRT-008' for key 'idx_sku'
+[22-Aug-2025 16:13:30 Europe/Berlin] Error adding product: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'TSHIRT-008' for key 'idx_sku'
+[22-Aug-2025 16:13:30 Europe/Berlin] Error adding product: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'TSHIRT-008' for key 'idx_sku'
+[22-Aug-2025 16:13:30 Europe/Berlin] Error adding product: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'TSHIRT-008' for key 'idx_sku'
+[22-Aug-2025 16:17:55 Europe/Berlin] Error adding product: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'size_id' in 'field list'
+[22-Aug-2025 16:17:55 Europe/Berlin] Error adding product: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'size_id' in 'field list'
+[22-Aug-2025 16:18:00 Europe/Berlin] Error adding product: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'size_id' in 'field list'
+[22-Aug-2025 16:18:01 Europe/Berlin] Error adding product: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'size_id' in 'field list'
+[22-Aug-2025 16:18:02 Europe/Berlin] Error adding product: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'size_id' in 'field list'
+[22-Aug-2025 16:18:03 Europe/Berlin] Error adding product: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'size_id' in 'field list'
+[22-Aug-2025 16:18:03 Europe/Berlin] Error adding product: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'size_id' in 'field list'
+[06-Nov-2025 14:53:05 Europe/Berlin] Error adding product: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'size_id' in 'field list'
+[06-Nov-2025 14:53:07 Europe/Berlin] Error adding product: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'size_id' in 'field list'
+[06-Nov-2025 14:53:09 Europe/Berlin] Error adding product: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'size_id' in 'field list'
+[06-Nov-2025 14:53:09 Europe/Berlin] Error adding product: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'size_id' in 'field list'
+[06-Nov-2025 14:53:13 Europe/Berlin] Error adding product: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'size_id' in 'field list'
+[06-Nov-2025 14:58:21 Europe/Berlin] Error adding product: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'size_id' in 'field list'
+[06-Nov-2025 15:10:40 Europe/Berlin] Error adding product: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'size_id' in 'field list'
+[06-Nov-2025 15:10:41 Europe/Berlin] Error adding product: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'size_id' in 'field list'
+[06-Nov-2025 15:10:43 Europe/Berlin] Error adding product: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'size_id' in 'field list'
+[06-Nov-2025 15:12:02 Europe/Berlin] Error adding product: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'size_id' in 'field list'
+[06-Nov-2025 15:12:03 Europe/Berlin] Error adding product: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'size_id' in 'field list'
+[06-Nov-2025 15:12:03 Europe/Berlin] Error adding product: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'size_id' in 'field list'
+[06-Nov-2025 15:12:04 Europe/Berlin] Error adding product: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'size_id' in 'field list'
+[06-Nov-2025 15:12:04 Europe/Berlin] Error adding product: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'size_id' in 'field list'
+[06-Nov-2025 15:12:05 Europe/Berlin] Error adding product: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'size_id' in 'field list'
+[06-Nov-2025 15:12:05 Europe/Berlin] Error adding product: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'size_id' in 'field list'
+[06-Nov-2025 16:23:11 Europe/Berlin] Processing 2 images for product 68
+[06-Nov-2025 16:23:11 Europe/Berlin] Processing image 0: IMG_6916.jpg
+[06-Nov-2025 16:23:11 Europe/Berlin] Image saved: assets/images/products/68/690cbd5f1d5a4.jpg
+[06-Nov-2025 16:23:11 Europe/Berlin] Processing image 1: IMG_6916.jpg
+[06-Nov-2025 16:23:11 Europe/Berlin] Image saved: assets/images/products/68/690cbd5f1e225.jpg

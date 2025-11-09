@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shop - Lee Sage</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../static/css/style.css" />
+  <link rel="stylesheet" href="../static/css/shop.css" />
+  <link rel="stylesheet" href="../static/css/footer.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+<body>
+  <div class="top-banner">
+    Welcome to LEE SAGE - 50% off
+  </div>
+  <header>
+    <div class="container">
+      <div class="logo" onclick="window.location.href='home.html'">
+        <img src="../../assets/images/IMG_6916-removebg-preview.png" alt="Lee Sage Logo" class="logo-image" />
+        <span>Lee Sage</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="shop.html" class="active">Shop</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li class="nav-login"><a href="login.html">Login</a></li>
+          <li><a href="cart.html" aria-label="Cart">
+            <span class="cart-icon" data-count="0">🛒</span>
+          </a></li>
+          <li class="nav-profile" style="display: none;"><a href="profile.html" class="profile-icon"></a></li>
+        </ul>
+      </nav>
+      <div class="hamburger" aria-label="Toggle navigation" role="button" tabindex="0">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="product-filter mt-2 mb-2">
+      <a href="#" class="filter-btn active" data-category="all">All</a>
+      <a href="#" class="filter-btn" data-category="1">Men</a>
+      <a href="#" class="filter-btn" data-category="2">Women</a>
+      <a href="#" class="filter-btn" data-category="3">Accessories</a>
+    </section>
+
+    <section class="product-grid" id="productGrid">
+      <!-- Product cards will be dynamically loaded here -->
+    </section>
+  </main>
+
+    <div id="footer-placeholder"></div>
+  <script>
+    function loadHTML(elementId, filePath) {
+      fetch(filePath)
+        .then(response => response.text())
+        .then(html => {
+          document.getElementById(elementId).innerHTML = html;
+        })
+        .catch(error => console.error('Error loading HTML:', error));
+    }
+    loadHTML('footer-placeholder', 'includes/footer.html');
+  </script>
+
+  <script src="../static/js/script.js"></script>
+  <script src="../static/js/shop.js"></script>
+</body>
+</html>

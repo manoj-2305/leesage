@@ -1,0 +1,83 @@
+/* Mobile Menu Styles */
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--color-white);
+    width: 200px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 1rem;
+    z-index: 9999;
+    transition: all 0.3s ease;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  nav ul li {
+    margin: 0.5rem 0;
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 0.5rem;
+    color: var(--color-black);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  nav ul li a:hover {
+    color: var(--color-gold);
+  }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    padding: 5px;
+    z-index: 1002;
+  }
+
+  .hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-black);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  /* Hamburger animation when active */
+  .hamburger.active div:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .hamburger.active div:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active div:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+  }
+
+  /* Prevent body scroll when menu is open */
+  body.menu-open {
+    overflow: hidden;
+  }
+
+  /* Ensure header container has relative positioning */
+  header .container {
+    position: relative;
+  }
+}
+
+/* Ensure hamburger is visible on mobile */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex !important;
+  }
+}

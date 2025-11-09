@@ -1,0 +1,81 @@
+<!-- Orders Management Content -->
+<div class="orders-content">
+    <div class="orders-header">
+        <h3>All Orders</h3>
+        <div class="order-filters">
+            <select id="orderStatusFilter">
+                <option value="">All Status</option>
+                <option value="pending">Pending</option>
+                <option value="processing">Processing</option>
+                <option value="shipped">Shipped</option>
+                <option value="delivered">Delivered</option>
+                <option value="cancelled">Cancelled</option>
+            </select>
+            <input type="date" id="orderDateFrom" placeholder="From Date">
+            <input type="date" id="orderDateTo" placeholder="To Date">
+            <button class="btn btn-primary" onclick="filterOrders()">Filter</button>
+            <button class="btn btn-secondary" onclick="exportOrders()">Export</button>
+        </div>
+    </div>
+
+    <div class="orders-table-container">
+        <table class="orders-table">
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Customer</th>
+                    <th>Date</th>
+                    <th>Items</th>
+                    <th>Total</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+    </div>
+
+    <div class="order-details-modal" id="orderDetailsModal" style="display: none;">
+        <div class="modal-content">
+            <h4>Order Details</h4>
+            <div class="order-info">
+                <p><strong>Order ID:</strong> <span id="modal-order-id"></span></p>
+                <p><strong>Customer:</strong> <span id="modal-customer-name"></span></p>
+                <p><strong>Email:</strong> <span id="modal-customer-email"></span></p>
+                <p><strong>Phone:</strong> <span id="modal-customer-phone"></span></p>
+                <p><strong>Address:</strong> <span id="modal-shipping-address"></span></p>
+                <p><strong>Date:</strong> <span id="modal-order-date"></span></p>
+                <p><strong>Status:</strong> <span id="modal-order-status" class="status-badge"></span></p>
+            </div>
+            <div class="order-items">
+                <h5>Order Items</h5>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody id="modal-order-items-body">
+                        <!-- Order items will be loaded here by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="order-total">
+                <p><strong>Subtotal:</strong> <span id="modal-subtotal"></span></p>
+                <p><strong>Shipping:</strong> <span id="modal-shipping"></span></p>
+                <p><strong>Tax:</strong> <span id="modal-tax"></span></p>
+                <p><strong>Total:</strong> <span id="modal-total"></span></p>
+            </div>
+            <div class="order-actions" id="modal-order-actions">
+                <!-- Action buttons will be loaded here by JavaScript -->
+            </div>
+            <button class="btn btn-secondary modal-close" onclick="document.getElementById('orderDetailsModal').style.display='none'">Close</button>
+        </div>
+    </div>
+</div>
+

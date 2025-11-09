@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - Leesage</title>
+    <link rel="stylesheet" href="static/css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="light-mode">
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <div class="logo">
+                    <i class="fas fa-store"></i>
+                    <h1>Leesage Admin</h1>
+                </div>
+                <p>Sign in to your admin account</p>
+            </div>
+
+            <form class="login-form" id="adminLoginForm">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <div class="input-group">
+                        <i class="fas fa-user"></i>
+                        <input 
+                            type="text" 
+                            id="username" 
+                            name="username" 
+                            placeholder="Enter your username"
+                            required
+                        >
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password" 
+                            placeholder="Enter your password"
+                            required
+                        >
+                        <button type="button" class="toggle-password" onclick="togglePassword()">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-options">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="rememberMe">
+                        <span class="checkmark"></span>
+                        Remember me
+                    </label>
+                    <a href="pages/forgot-password.html" class="forgot-link">Forgot password?</a>
+                </div>
+
+                <button type="submit" class="btn btn-primary login-btn">
+                    <i class="fas fa-sign-in-alt"></i>
+                    Sign In
+                </button>
+
+                <div class="login-footer">
+                    <p>Having trouble? <a href="#">Contact support</a></p>
+                </div>
+            </form>
+
+            <div class="login-error" id="loginError" style="display: none;">
+                <i class="fas fa-exclamation-circle"></i>
+                <span id="errorMessage">Invalid username or password</span>
+            </div>
+        </div>
+
+        <div class="login-info">
+            <h2>Welcome to Leesage Admin</h2>
+            <p>Manage your e-commerce store efficiently with our comprehensive admin panel.</p>
+            <ul>
+                <li><i class="fas fa-check"></i> Manage products and inventory</li>
+                <li><i class="fas fa-check"></i> Track orders and shipments</li>
+                <li><i class="fas fa-check"></i> Analyze sales and performance</li>
+                <li><i class="fas fa-check"></i> Handle customer support</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="static/js/login.js"></script>
+</body>
+</html>
